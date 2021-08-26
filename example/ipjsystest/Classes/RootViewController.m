@@ -105,6 +105,8 @@ void gui_sleep(unsigned sec)
     [NSThread sleepForTimeInterval:sec];
 }
 
+#pragma mark - Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04C60A6BE5DDE6CF00A1B530 /* libPods-ipjsystest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2336B617AD13D973C6FC77 /* libPods-ipjsystest.a */; };
 		11CF1C3119D49E2200FE97C3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CF1C3019D49E2200FE97C3 /* Default-568h@2x.png */; };
 		1D3623260D0F684500981E51 /* ipjsystestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* ipjsystestAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -21,7 +22,8 @@
 		3A3479221154DB0800D51880 /* systest.c in Sources */ = {isa = PBXBuildFile; fileRef = 3A3479211154DB0800D51880 /* systest.c */; };
 		3A3479871154EC4E00D51880 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3479861154EC4E00D51880 /* AudioToolbox.framework */; };
 		3ABE0507147CA00B00A57A62 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ABE0506147CA00B00A57A62 /* CFNetwork.framework */; };
-		414CE4D1B8CC4583856E0C50 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72307DC289BB4773B2E873E9 /* libPods.a */; };
+		83ABD9EB26D5D51D00D55523 /* tock8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83ABD9EA26D5D51D00D55523 /* tock8.wav */; };
+		83ABD9ED26D61D4600D55523 /* input.8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83ABD9EC26D61D4600D55523 /* input.8.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,7 @@
 		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		33D1E8E216294DDF45E8B698 /* Pods-ipjsystest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipjsystest.debug.xcconfig"; path = "Target Support Files/Pods-ipjsystest/Pods-ipjsystest.debug.xcconfig"; sourceTree = "<group>"; };
 		3A3478A91154BF8E00D51880 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		3A3478AD1154BFD700D51880 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		3A3478AE1154BFD700D51880 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
@@ -46,10 +49,11 @@
 		3A3479731154EB6B00D51880 /* systest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = systest.h; path = ../pjsystest/systest.h; sourceTree = SOURCE_ROOT; };
 		3A3479861154EC4E00D51880 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3ABE0506147CA00B00A57A62 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		663B6096E3810166E26EB8F5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		72307DC289BB4773B2E873E9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D9D218491A218458CD82E3B /* Pods-ipjsystest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipjsystest.release.xcconfig"; path = "Target Support Files/Pods-ipjsystest/Pods-ipjsystest.release.xcconfig"; sourceTree = "<group>"; };
+		83ABD9EA26D5D51D00D55523 /* tock8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tock8.wav; sourceTree = "<group>"; };
+		83ABD9EC26D61D4600D55523 /* input.8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = input.8.wav; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ipjsystest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ipjsystest-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		AE5224A420909C6BF5008C52 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BF2336B617AD13D973C6FC77 /* libPods-ipjsystest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ipjsystest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +66,7 @@
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				3A3479871154EC4E00D51880 /* AudioToolbox.framework in Frameworks */,
 				3ABE0507147CA00B00A57A62 /* CFNetwork.framework in Frameworks */,
-				414CE4D1B8CC4583856E0C50 /* libPods.a in Frameworks */,
+				04C60A6BE5DDE6CF00A1B530 /* libPods-ipjsystest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,16 +94,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		1F4815C3BA606E8AD4F6056D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33D1E8E216294DDF45E8B698 /* Pods-ipjsystest.debug.xcconfig */,
+				6D9D218491A218458CD82E3B /* Pods-ipjsystest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				83ABD9EC26D61D4600D55523 /* input.8.wav */,
+				83ABD9EA26D5D51D00D55523 /* tock8.wav */,
 				11CF1C3019D49E2200FE97C3 /* Default-568h@2x.png */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				C4BA67EC556B752A1503975E /* Pods */,
+				1F4815C3BA606E8AD4F6056D /* Pods */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -133,7 +148,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
-				72307DC289BB4773B2E873E9 /* libPods.a */,
+				BF2336B617AD13D973C6FC77 /* libPods-ipjsystest.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,15 +163,6 @@
 			name = pjsystest;
 			sourceTree = "<group>";
 		};
-		C4BA67EC556B752A1503975E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				663B6096E3810166E26EB8F5 /* Pods.debug.xcconfig */,
-				AE5224A420909C6BF5008C52 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -164,11 +170,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ipjsystest" */;
 			buildPhases = (
-				70B0D7A5FF2145229A7A4B86 /* Check Pods Manifest.lock */,
+				539D27D6D011C7B1F860C2AE /* [CP] Check Pods Manifest.lock */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
-				4DB42386CE0D42EAA083550F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,6 +204,7 @@
 				en,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -212,6 +218,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83ABD9EB26D5D51D00D55523 /* tock8.wav in Resources */,
+				83ABD9ED26D61D4600D55523 /* input.8.wav in Resources */,
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				11CF1C3119D49E2200FE97C3 /* Default-568h@2x.png in Resources */,
 				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
@@ -222,34 +230,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4DB42386CE0D42EAA083550F /* Copy Pods Resources */ = {
+		539D27D6D011C7B1F860C2AE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "Copy Pods Resources";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ipjsystest-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		70B0D7A5FF2145229A7A4B86 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -272,25 +272,37 @@
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 663B6096E3810166E26EB8F5 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 33D1E8E216294DDF45E8B698 /* Pods-ipjsystest.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 483VQ524HA;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ipjsystest_Prefix.pch;
 				INFOPLIST_FILE = "ipjsystest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jzxl.ocs.tech;
 				PRODUCT_NAME = ipjsystest;
+				PROVISIONING_PROFILE_SPECIFIER = com.jzxl.ocs.tech_Development;
 			};
 			name = Debug;
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE5224A420909C6BF5008C52 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 6D9D218491A218458CD82E3B /* Pods-ipjsystest.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 483VQ524HA;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ipjsystest_Prefix.pch;
 				INFOPLIST_FILE = "ipjsystest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jzxl.ocs.tech;
 				PRODUCT_NAME = ipjsystest;
+				PROVISIONING_PROFILE_SPECIFIER = com.jzxl.ocs.tech_Development;
 			};
 			name = Release;
 		};
