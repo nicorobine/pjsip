@@ -51,15 +51,22 @@ elif [[ "${ARCH}" == "watchos_arm64_32" || "${ARCH}" == "watchos_armv7k" ]]; the
   ARCH=$(echo "${ARCH}" | sed -E 's|^[^_]*_(.+)$|\1|g')
 
   # Set env vars for Configure
+  # DEVELOPER：/Applications/Xcode.app/Contents/Developer
   export CROSS_TOP="${DEVELOPER}/Platforms/${PLATFORM}.platform/Developer"
+  # 交叉编译的SDK 如：
+  # /Applications/Xcode.app/Contents/DeveloperPlatforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk
+  # 那么：CROSS_SDK：iPhoneOS14.4.sdk
   export CROSS_SDK="${PLATFORM}${SDKVERSION}.sdk"
+  # 构建工具的路径 /Applications/Xcode.app/Contents/Developer
   export BUILD_TOOLS="${DEVELOPER}"
+  # 使用 Xcode 的构建 gcc 构建工具构建指定的架构
   export CC="${BUILD_TOOLS}/usr/bin/gcc -arch ${ARCH}"
 
   # Prepare TARGETDIR and SOURCEDIR
   prepare_target_source_dirs
 
   # Add optional enable-ec_nistp_64_gcc_128 configure option for 64 bit builds
+  # 为 64 位构建添加可选的 enable-ec_nistp_64_gcc_128 配置选项
   LOCAL_CONFIG_OPTIONS="${CONFIG_OPTIONS}"
   if [ "${CONFIG_ENABLE_EC_NISTP_64_GCC_128}" == "true" ]; then
     case "${ARCH}" in
@@ -69,11 +76,13 @@ elif [[ "${ARCH}" == "watchos_arm64_32" || "${ARCH}" == "watchos_armv7k" ]]; the
     esac
   fi
 
+  # 构建选项是否开启 bitcode
   if [ "${CONFIG_DISABLE_BITCODE}" != "true" ]; then
       LOCAL_CONFIG_OPTIONS="${LOCAL_CONFIG_OPTIONS} -fembed-bitcode"
   fi
 
   # Add platform specific config options
+  # 添加平台指定的构建选项
   if [[ "${PLATFORM}" == AppleTV* ]]; then
     LOCAL_CONFIG_OPTIONS="${LOCAL_CONFIG_OPTIONS} -DHAVE_FORK=0 -mtvos-version-min=${TVOS_MIN_SDK_VERSION}"
     echo "  Patching Configure..."
@@ -89,6 +98,7 @@ elif [[ "${ARCH}" == "watchos_arm64_32" || "${ARCH}" == "watchos_armv7k" ]]; the
   fi
 
   # Add --openssldir option
+  # 添加 openssldir
   LOCAL_CONFIG_OPTIONS="--openssldir=${TARGETDIR} ${LOCAL_CONFIG_OPTIONS}"
 
   # Determine configure target
@@ -104,6 +114,7 @@ elif [[ "${ARCH}" == "watchos_arm64_32" || "${ARCH}" == "watchos_armv7k" ]]; the
   # Only required for Darwin64 builds (-isysroot is automatically added by iphoneos-cross target)
   if [ "${ARCH}" == "x86_64" ]; then
     echo "  Patching Makefile..."
+    # 看不懂
     sed -ie "s!^CFLAG=!CFLAG=-isysroot ${CROSS_TOP}/SDKs/${CROSS_SDK} !" "Makefile"
   fi
 

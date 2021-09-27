@@ -1,4 +1,4 @@
-/* $Id: rpid.h 3553 2011-05-05 06:14:19Z nanang $ */
+/* $Id$ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -42,7 +42,7 @@ PJ_BEGIN_DECL
 
 /**
  * This enumeration describes subset of standard activities as 
- * described by RFC 4880, RPID: Rich Presence Extensions to the 
+ * described by RFC 4480, RPID: Rich Presence Extensions to the
  * Presence Information Data Format (PIDF). 
  */
 typedef enum pjrpid_activity
@@ -107,7 +107,8 @@ PJ_DECL(void) pjrpid_element_dup(pj_pool_t *pool, pjrpid_element *dst,
  * Add RPID element information into existing PIDF document. This will also
  * add the appropriate XML namespace attributes into the presence's XML
  * node, if the attributes are not already present, and also a <note> element
- * to the first <tuple> element of the PIDF document.
+ * to the first <tuple> element of the PIDF document, if a <note> element
+ * is not present.
  *
  * @param pres	    The PIDF presence document.
  * @param pool	    Pool.

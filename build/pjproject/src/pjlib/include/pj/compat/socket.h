@@ -1,4 +1,4 @@
-/* $Id: socket.h 5692 2017-11-13 06:06:25Z ming $ */
+/* $Id$ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -179,10 +179,12 @@
 
 /*
  * And undefine these..
+ * Note (see issue #2311): unfortunately, this may cause build failure
+ * to anyone who uses these standard macros.
  */
-#undef s_addr
-#undef s6_addr
-#undef sin_zero
+//#undef s_addr
+//#undef s6_addr
+//#undef sin_zero
 
 /*
  * This will finally be obsoleted, since it should be declared in

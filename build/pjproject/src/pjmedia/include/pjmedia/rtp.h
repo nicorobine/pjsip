@@ -1,4 +1,4 @@
-/* $Id: rtp.h 5748 2018-02-27 03:37:53Z ming $ */
+/* $Id$ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -153,6 +153,20 @@ struct pjmedia_rtp_dtmf_event
     pj_uint8_t	e_vol;	    /**< Event volume.	    */
     pj_uint16_t	duration;   /**< Event duration.    */
 };
+
+/**
+ * Mask for the E ("End") bit of telephony-events payload.
+ *
+ * @see pjmedia_rtp_dtmf_event
+ */
+#define PJMEDIA_RTP_DTMF_EVENT_END_MASK     0x80
+
+/**
+ * Mask for the Volume field of telephony-events payload.
+ *
+ * @see pjmedia_rtp_dtmf_event
+ */
+#define PJMEDIA_RTP_DTMF_EVENT_VOLUME_MASK  0x3F
 
 /**
  * @see pjmedia_rtp_dtmf_event

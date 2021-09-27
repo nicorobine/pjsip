@@ -1,4 +1,4 @@
-/* $Id: ssl_sock.h 6004 2019-05-24 03:32:17Z riza $ */
+/* $Id$ */
 /* 
  * Copyright (C) 2009-2011 Teluu Inc. (http://www.teluu.com)
  *
@@ -708,6 +708,11 @@ typedef enum pj_ssl_sock_proto
      */
     PJ_SSL_SOCK_PROTO_TLS1_2  = (1 << 4),
 
+    /**
+     * TLSv1.3 protocol.
+     */
+    PJ_SSL_SOCK_PROTO_TLS1_3  = (1 << 5),
+
     /** 
      * Certain backend implementation e.g:OpenSSL, has feature to enable all
      * protocol. 
@@ -996,7 +1001,8 @@ typedef struct pj_ssl_sock_param
      * (perform outgoing connection) and the server may host multiple
      * 'virtual' servers at a single underlying network address, setting
      * this will allow client to tell the server a name of the server
-     * it is contacting.
+     * it is contacting. This must be set to hostname and literal IP addresses
+     * are not allowed.
      *
      * Default value is zero/not-set.
      */

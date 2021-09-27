@@ -1,4 +1,4 @@
-/* $Id: config.h 4589 2013-09-05 03:50:22Z riza $ */
+/* $Id$ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -352,10 +352,10 @@
 
 /**
  * Maximum number of argument values of choice type.
- * Default: 16
+ * Default: 64
  */
 #ifndef PJ_CLI_MAX_CHOICE_VAL
-#   define PJ_CLI_MAX_CHOICE_VAL  16
+#   define PJ_CLI_MAX_CHOICE_VAL   64
 #endif
 
 /**

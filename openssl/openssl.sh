@@ -93,6 +93,7 @@ spinner()
 prepare_target_source_dirs()
 {
   # Prepare target dir
+  # CURRENTPATH: build/openssl 路径
   TARGETDIR="${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk"
   mkdir -p "${TARGETDIR}"
   LOG="${TARGETDIR}/build-openssl-${VERSION}.log"

@@ -1,4 +1,4 @@
-/* $Id: sip_config.h 6002 2019-05-23 17:21:59Z riza $ */
+/* $Id$ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -894,9 +894,17 @@ PJ_INLINE(pjsip_cfg_t*) pjsip_cfg(void)
 #endif
 
 
-/* Endpoint. */
-#define PJSIP_MAX_TIMER_COUNT		(2*pjsip_cfg()->tsx.max_count + \
+/**
+ * Specify the maximum number of timer entries initially allocated by
+ * endpoint. If the application registers more entries during runtime,
+ * then the timer will automatically resize.
+ *
+ * Default: (2*pjsip_cfg()->tsx.max_count) + (2*PJSIP_MAX_DIALOG_COUNT)
+ */
+#ifndef PJSIP_MAX_TIMER_COUNT
+#   define PJSIP_MAX_TIMER_COUNT	(2*pjsip_cfg()->tsx.max_count + \
 					 2*PJSIP_MAX_DIALOG_COUNT)
+#endif
 
 /**
  * Initial memory block for the endpoint.
@@ -929,8 +937,19 @@ PJ_INLINE(pjsip_cfg_t*) pjsip_cfg(void)
 #   define PJSIP_POOL_RDATA_INC		4000
 #endif
 
-#define PJSIP_POOL_LEN_TRANSPORT	512
-#define PJSIP_POOL_INC_TRANSPORT	512
+/**
+ * Initial memory block for SIP transport.
+ */
+#ifndef PJSIP_POOL_LEN_TRANSPORT
+#   define PJSIP_POOL_LEN_TRANSPORT	512
+#endif
+
+/**
+ * Memory increment for SIP transport.
+ */
+#ifndef PJSIP_POOL_INC_TRANSPORT
+#   define PJSIP_POOL_INC_TRANSPORT	512
+#endif
 
 /**
  * Initial memory block size for tdata.
@@ -959,6 +978,21 @@ PJ_INLINE(pjsip_cfg_t*) pjsip_cfg(void)
 #ifndef PJSIP_POOL_INC_UA
 #   define PJSIP_POOL_INC_UA		512
 #endif
+
+/**
+ * Initial memory block for event subscription module.
+ */
+#ifndef PJSIP_POOL_EVSUB_LEN
+#   define PJSIP_POOL_EVSUB_LEN		512
+#endif
+
+/**
+ * Memory increment for event subscription module.
+ */
+#ifndef PJSIP_POOL_EVSUB_INC
+#   define PJSIP_POOL_EVSUB_INC		512
+#endif
+
 
 #define PJSIP_MAX_FORWARDS_VALUE	70
 
@@ -1188,6 +1222,20 @@ PJ_INLINE(pjsip_cfg_t*) pjsip_cfg(void)
  */
 #ifndef PJSIP_AUTH_CACHED_POOL_MAX_SIZE
 #   define PJSIP_AUTH_CACHED_POOL_MAX_SIZE	(20 * 1024)
+#endif
+
+
+/**
+ * Specify whether the cnonce used for SIP authentication contain digits only.
+ * The "cnonce" value is setup using GUID generator, i.e:
+ * pj_create_unique_string(), and the GUID string may contain hyphen character
+ * ("-"). Some SIP servers do not like this GUID format, so this option will
+ * strip any hyphens from the GUID string.
+ *
+ * Default is 1 (cnonce will not contain any hyphen characters).
+ */
+#ifndef PJSIP_AUTH_CNONCE_USE_DIGITS_ONLY
+#   define PJSIP_AUTH_CNONCE_USE_DIGITS_ONLY	1
 #endif
 
 /*****************************************************************************

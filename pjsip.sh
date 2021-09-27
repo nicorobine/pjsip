@@ -26,7 +26,8 @@ OSX_PLATFORM=$(xcrun --sdk macosx --show-sdk-platform-path)
 OSX_SDK=$(xcrun --sdk macosx --show-sdk-path)
 
 BASE_DIR="$1"
-PJSIP_URL="http://www.pjsip.org/release/${PJSIP_VERSION:-2.9}/pjproject-${PJSIP_VERSION:-2.9}.tar.bz2"
+#PJSIP_URL="http://www.pjsip.org/release/${PJSIP_VERSION:-2.9}/pjproject-${PJSIP_VERSION:-2.9}.tar.bz2"
+PJSIP_URL="https://github.com/pjsip/pjproject/archive/refs/tags/2.11.1.tar.gz"
 PJSIP_DIR="$1/src"
 LIB_PATHS=("pjlib/lib" \
            "pjlib-util/lib" \
@@ -64,11 +65,15 @@ while [ "$#" -gt 0 ]; do
 done
 
 function configure () {
+
+  echo "start config..."
+
 	TYPE=$1
 	ARCH=$2
 	LOG=$3
 
 	PJSIP_CONFIG_PATH="${PJSIP_DIR}/pjlib/include/pj/config_site.h"
+	PJSIP_USER_MAK_PATH="${PJSIP_DIR}/user.mak"
 	CONFIGURE=
 
 	echo "Configuring for ${TYPE} ${ARCH}"
@@ -77,6 +82,9 @@ function configure () {
 		rm "${PJSIP_CONFIG_PATH}"
 	fi
 
+  if [ ! -f "${PJSIP_USER_MAK_PATH}" ]; then
+      echo "export LDFLAGS += -framework Network -framework Security" > "${PJSIP_USER_MAK_PATH}"
+  fi
 
 	if [ "$TYPE" == "macos" ]; then
 		# macOS
@@ -87,6 +95,8 @@ function configure () {
 		# iOS
 		CONFIGURE="./configure-iphone"
 		echo "#define PJ_CONFIG_IPHONE 1" >> "${PJSIP_CONFIG_PATH}"
+		echo "#define PJ_HAS_SSL_SOCK 1" >> "${PJSIP_CONFIG_PATH}"
+		echo "#define PJ_SSL_SOCK_IMP PJ_SSL_SOCK_IMP_APPLE" >> "${PJSIP_CONFIG_PATH}"
 		echo "#undef PJ_IPHONE_OS_HAS_MULTITASKING_SUPPORT" >> "${PJSIP_CONFIG_PATH}"
 		echo "#define PJ_IPHONE_OS_HAS_MULTITASKING_SUPPORT 0" >> "${PJSIP_CONFIG_PATH}" # for iOS 9+
 		if [[ ${HAS_VIDEO} ]]; then
@@ -254,6 +264,22 @@ function do_lipo() {
 	done < "${TMP}"
 }
 
+echo "__FILE__: $__FILE__"
+echo "__DIR__: $___DIR__"
+echo "DEVELOPER: $DEVELOPER"
+echo "IPHONEOS_DEPLOYMENT_VERSION: $IPHONEOS_DEPLOYMENT_VERSION"
+echo "IPHONEOS_PLATFORM: $IPHONEOS_PLATFORM"
+echo "IPHONEOS_SDK: $IPHONEOS_SDK"
+echo "IPHONESIMULATOR_PLATFORM: $IPHONESIMULATOR_PLATFORM"
+echo "IPHONESIMULATOR_SDK: $IPHONESIMULATOR_SDK"
+echo "OSX_DEPLOYMENT_VERSION: $OSX_DEPLOYMENT_VERSION"
+echo "OSX_PLATFORM: $OSX_PLATFORM"
+echo "OSX_SDK: $OSX_SDK"
+echo "BASE_DIR: $BASE_DIR"
+echo "PJSIP_URL: $PJSIP_URL"
+echo "PJSIP_DIR: $PJSIP_DIR"
+echo "LIB_PATHS: $LIB_PATHS"
+
 download "${PJSIP_URL}" "${PJSIP_DIR}"
 
 
@@ -264,7 +290,7 @@ build "armv7s" "${IPHONEOS_SDK}" "ios"
 build "arm64" "${IPHONEOS_SDK}" "ios"
 
 # We don't support x86 for macOS.
-build "x86_64" "${OSX_SDK}" "macos"
+#build "x86_64" "${OSX_SDK}" "macos"
 
 do_lipo "ios" "i386" "x86_64" "armv7" "armv7s" "arm64"
-do_lipo "macos" "x86_64"
+#do_lipo "macos" "x86_64"

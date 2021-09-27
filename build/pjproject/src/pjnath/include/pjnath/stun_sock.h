@@ -1,4 +1,4 @@
-/* $Id: stun_sock.h 5339 2016-06-08 03:17:45Z nanang $ */
+/* $Id$ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -391,7 +391,7 @@ PJ_DECL(pj_status_t) pj_stun_sock_create(pj_stun_config *stun_cfg,
  *			queued, or the appropriate error code on failure.
  *			When this function returns PJ_SUCCESS, the final
  *			result of the allocation process will be notified
- *			to application in \a on_state() callback.
+ *			to application in \a on_status() callback.
  */
 PJ_DECL(pj_status_t) pj_stun_sock_start(pj_stun_sock *stun_sock,
 				        const pj_str_t *domain,

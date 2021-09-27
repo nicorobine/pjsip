@@ -1,4 +1,4 @@
-/* $Id: transport_srtp.h 5755 2018-03-15 03:00:59Z nanang $ */
+/* $Id$ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -113,6 +113,13 @@ typedef enum pjmedia_srtp_use
      * will reject RTP/SAVP offer.
      */
     PJMEDIA_SRTP_DISABLED,
+
+    /**
+     * When this flag is specified, SRTP setting is unknown. This is to set
+     * the initial remote's SRTP usage. It will be set later after remote's
+     * policy in the SDP is received.
+     */
+    PJMEDIA_SRTP_UNKNOWN = PJMEDIA_SRTP_DISABLED,
 
     /**
      * When this flag is specified, SRTP will be advertised as optional and
